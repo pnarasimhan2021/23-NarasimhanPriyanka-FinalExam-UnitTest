@@ -10,13 +10,9 @@ public class StringCalculator {
         } else {
             for (String number : numbersArray) {
                 if (!number.trim().isEmpty()) {
-                    int toBeAdded = Integer.parseInt(number.trim());
-                    if(toBeAdded >= 1000) { //will ignore numbers greater than or equal to 1000
-                        toBeAdded = Integer.parseInt(number.trim());
+                    int toBeAdded = Integer.parseInt(number.trim());// If it is not a number, parseInt will throw an exception
+                    if(toBeAdded < 1000) { //will ignore numbers greater than or equal to 1000
                         returnValue+=toBeAdded;
-                    }
-                    else {
-                        returnValue+=toBeAdded; // If it is not a number, parseInt will throw an exception
                     }
                 }
             }
