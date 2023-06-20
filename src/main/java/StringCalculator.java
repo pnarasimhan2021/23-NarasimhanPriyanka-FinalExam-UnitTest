@@ -1,5 +1,8 @@
 public class StringCalculator {
     public static int add(String numbers) {
+        if(numbers.contains("-")){
+            throw new IllegalArgumentException("Negatives not allowed.");
+        }
         int returnValue=0;
         String[] numbersArray = numbers.split(",|\n");
         if (numbersArray.length > 2) {
@@ -7,7 +10,11 @@ public class StringCalculator {
         } else {
             for (String number : numbersArray) {
                 if (!number.trim().isEmpty()) {
-                    returnValue+=Integer.parseInt(number.trim()); // If it is not a number, parseInt will throw an exception
+                    int toBeAdded = Integer.parseInt(number.trim());
+                    if(toBeAdded >= 1000) { //will ignore numbers greater than or equal to 1000
+                        toBeAdded = Integer.parseInt(number.trim());
+                    }
+                    returnValue+=toBeAdded; // If it is not a number, parseInt will throw an exception
                 }
             }
         }

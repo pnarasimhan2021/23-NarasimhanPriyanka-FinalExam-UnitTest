@@ -28,9 +28,18 @@ public class NewReqsTest {
     }
 
     @Test
-    public void detectGreaterThan1000() {
+    public void detectGreaterThanThousand1() {
         input = "5,1000";
-        Throwable exception = assertThrows(IllegalArgumentException.class, () -> calc.add(input));
-        assertEquals("Negatives not allowed.", exception.getMessage());
+        assertEquals(5,calc.add(input));
+    }
+    @Test
+    public void detectGreaterThanThousand2() {
+        input = "5,1001";
+        assertEquals(5,calc.add(input));
+    }
+    @Test
+    public void detectGreaterThanThousand3() {
+        input = "5,1000,1001";
+        assertEquals(5,calc.add(input));
     }
 }
