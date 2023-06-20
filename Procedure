@@ -1,0 +1,7 @@
+Recommended Steps:
+1) Create a new branch from StringCalculator project called newReqs
+2) Incorporate new tests for the two new functionalities in a new Test class named newReqsTest
+3) commit and push to origin
+4) Incorporate implementation for the new functionalities in the already existing StringCalculator class
+5) commit and push to origin
+6) Run test suite. If all tests pass, build in Travis CI
