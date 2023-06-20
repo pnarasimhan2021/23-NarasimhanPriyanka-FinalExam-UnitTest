@@ -13,8 +13,11 @@ public class StringCalculator {
                     int toBeAdded = Integer.parseInt(number.trim());
                     if(toBeAdded >= 1000) { //will ignore numbers greater than or equal to 1000
                         toBeAdded = Integer.parseInt(number.trim());
+                        returnValue+=toBeAdded;
                     }
-                    returnValue+=toBeAdded; // If it is not a number, parseInt will throw an exception
+                    else {
+                        returnValue+=toBeAdded; // If it is not a number, parseInt will throw an exception
+                    }
                 }
             }
         }

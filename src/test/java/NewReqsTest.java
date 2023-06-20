@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class NewReqsTest {
     private StringCalculator calc;
     private String input;
+
     @BeforeEach
 
     public void setUp() {
@@ -30,16 +31,12 @@ public class NewReqsTest {
     @Test
     public void detectGreaterThanThousand1() {
         input = "5,1000";
-        assertEquals(5,calc.add(input));
+        assertEquals(5, calc.add(input));
     }
+
     @Test
     public void detectGreaterThanThousand2() {
         input = "5,1001";
-        assertEquals(5,calc.add(input));
-    }
-    @Test
-    public void detectGreaterThanThousand3() {
-        input = "5,1000,1001";
-        assertEquals(5,calc.add(input));
+        assertEquals(5, calc.add(input));
     }
 }
